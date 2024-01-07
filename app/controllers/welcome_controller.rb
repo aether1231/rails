@@ -1,15 +1,7 @@
 class WelcomeController < ApplicationController
+  before_action :set_values, only: [:home]
+
   def home
-    some_value = true
-    
-    if some_value
-      flash[:success] = "Redirect was successful again"
-      redirect_to root_url
-#      redirect_to root_url, flash: {success: "Redirect was successful"}
-    else
-      flash[:success] = "Redirect user to features page ..."
-      redirect_to welcome_features_path
-    end
   end
 
   def about
@@ -19,5 +11,10 @@ class WelcomeController < ApplicationController
   end
 
   def features
+  end
+
+  private
+  def set_values
+    @name = "Kevin"
   end
 end

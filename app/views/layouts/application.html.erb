@@ -16,5 +16,6 @@
     <% end %>
 
     <%= yield %>
+    <%= @name if @name.present? %>
   </body>
 </html>
