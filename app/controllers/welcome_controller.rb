@@ -3,12 +3,13 @@ class WelcomeController < ApplicationController
     some_value = true
     
     if some_value
-      @message = "Welcome to my homepage"
+      flash[:success] = "Redirect was successful again"
+      redirect_to root_url
+#      redirect_to root_url, flash: {success: "Redirect was successful"}
     else
-      @message = "Hope you are having a great day"
+      flash[:success] = "Redirect user to features page ..."
+      redirect_to welcome_features_path
     end
-
-    Rails.logger.debug "Message: #{ @message}"
   end
 
   def about
