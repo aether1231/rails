@@ -11,11 +11,13 @@
   </head>
 
   <body>
-    <% if flash[:success] %>
-      <p><%= flash[:success] %></p>
-    <% end %>
-
-    <%= yield %>
-    <%= @name if @name.present? %>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render partial: "layouts/footer" %>
   </body>
 </html>
